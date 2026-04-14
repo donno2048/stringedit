@@ -59,3 +59,8 @@ optional arguments:
                         string used to separate strings in output
 ```
 
+## Uses
+
+- Could be used to create a modded version for a game by changing dialogues and such
+- Could theoretically be used to "steal" someones binary by just replacing any info (e.g. license) with the attacker's - removes the need to decompile, change and then recompile the binary
+- And more
