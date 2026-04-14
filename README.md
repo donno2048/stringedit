@@ -1,37 +1,61 @@
-# nothingness
+# stringedit
 
-This is nothing, just a template for PyPI packages
+Replace strings in binary files.
 
 ## Installation
 
 ### From PyPI
 
 ```sh
-pip3 install nothingness
+pip3 install stringedit
 ```
 
 ### From GitHub
 
 ```sh
-pip3 install git+https://github.com/donno2048/nothingness
+pip3 install git+https://github.com/donno2048/stringedit
 ```
-
 ## Usage
 
-### Import fun from \_\_init__.py
-
-```py
-from nothingness import fun
-```
-
-### Run \_\_main__.py
+To run the string editing use `stringed` or `python3 -m stringedit`
 
 ```sh
-python3 -m nothingness
+$ stringed -h
+usage: stringed [-h] [-n [number]] [-m {l,r,L}] filename
+
+Replace strings in binary files
+
+positional arguments:
+  filename              input filename
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -n [number], --bytes [number]
+                        print amy string of at least [number] characters (default 4)
+  -m {l,r,L}, --method {l,r,L}
+                        method used to widen replacement string if it's too long l - pad with
+                        spaces from the left r - pad with spaces from the right L - leave
+                        everything after the replacement as it was
 ```
 
-### Run main from \_\_main__.py
+You can also use the `stringpr` to print all the strings, similar to the `strings` linux command.
 
 ```sh
-nothingness
+$ stringpr -h
+usage: stringpr [-h] [-n [number]] [-t {o,d,x}] [-s <string>] filename
+
+Print strings in binary files
+
+positional arguments:
+  filename              input filename
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -n [number], --bytes [number]
+                        print amy string of at least [number] characters (default 4)
+  -t {o,d,x}, --radix {o,d,x}
+                        print the location of the string in base 8, 10 or 16
+  -s <string>, --output-separator <string>
+                        string used to separate strings in output
 ```
+
